@@ -173,4 +173,4 @@ MIT
 
 ## Author
 
-Maqsood Ahmed
+Mohammed Maqsood L
