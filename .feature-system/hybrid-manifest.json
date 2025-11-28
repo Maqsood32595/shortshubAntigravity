@@ -1,0 +1,25 @@
+{
+  "generated_at": "2025-11-28T16:31:01.412Z",
+  "backend_features": [
+    "ai-generation",
+    "dashboard",
+    "platforms",
+    "user-auth",
+    "video-discovery",
+    "video-upload"
+  ],
+  "frontend_layouts": [
+    "dashboard",
+    "upload"
+  ],
+  "integrations": [
+    {
+      "feature": "video-upload",
+      "layout": "upload",
+      "components": [
+        "VideoUploadZone",
+        "UploadProgressBar"
+      ]
+    }
+  ]
+}

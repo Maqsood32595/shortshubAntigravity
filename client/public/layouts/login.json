@@ -1,0 +1,102 @@
+{
+    "id": "login",
+    "structure": {
+        "type": "div",
+        "props": {
+            "className": "min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 px-4"
+        },
+        "children": [
+            {
+                "type": "Card",
+                "props": {
+                    "className": "w-full max-w-md p-8 shadow-2xl"
+                },
+                "children": [
+                    {
+                        "type": "div",
+                        "props": {
+                            "className": "text-center mb-8"
+                        },
+                        "children": [
+                            {
+                                "type": "h1",
+                                "props": {
+                                    "className": "text-3xl font-bold text-gray-900 dark:text-white mb-2",
+                                    "children": "Welcome Back"
+                                }
+                            },
+                            {
+                                "type": "p",
+                                "props": {
+                                    "className": "text-gray-600 dark:text-gray-400",
+                                    "children": "Sign in to continue to ShortsHub"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "form",
+                        "props": {
+                            "className": "space-y-4",
+                            "onSubmit": "handleLogin"
+                        },
+                        "children": [
+                            {
+                                "type": "Input",
+                                "props": {
+                                    "label": "Email",
+                                    "name": "email",
+                                    "type": "email",
+                                    "placeholder": "you@example.com",
+                                    "required": true
+                                }
+                            },
+                            {
+                                "type": "Input",
+                                "props": {
+                                    "label": "Password",
+                                    "name": "password",
+                                    "type": "password",
+                                    "placeholder": "••••••••",
+                                    "required": true
+                                }
+                            },
+                            {
+                                "type": "Button",
+                                "props": {
+                                    "variant": "primary",
+                                    "size": "lg",
+                                    "type": "submit",
+                                    "className": "w-full",
+                                    "children": "Sign In"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "props": {
+                            "className": "text-center text-sm text-gray-600 dark:text-gray-400 mt-6"
+                        },
+                        "children": [
+                            {
+                                "type": "span",
+                                "props": {
+                                    "children": "Don't have an account? "
+                                }
+                            },
+                            {
+                                "type": "a",
+                                "props": {
+                                    "href": "/register",
+                                    "className": "text-blue-600 hover:text-blue-700 font-medium",
+                                    "children": "Create Account"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

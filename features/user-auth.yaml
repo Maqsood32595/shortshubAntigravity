@@ -1,0 +1,69 @@
+feature:
+  id: "user-auth"
+  name: "User Authentication"
+  version: "2.1.0"
+  status: "active"
+  layer: "backend"                      # ← Marks as backend feature
+  
+  changelog:
+    - version: "2.1.0"
+      date: "2024-11-20"
+      ai: "Claude-Sonnet-4"
+      what: ["Added password reset via email"]
+      why: "User requested feature"
+      breaking: []
+
+backend:
+  folder: "server/custom/auth/"
+  
+  routes:
+    - method: POST
+      path: "/api/auth/register"
+      handler: "auth/register.js"
+      auth_required: false
+      rate_limit: "3/hour/ip"
+      
+    - method: POST
+      path: "/api/auth/login"
+      handler: "auth/login.js"
+      auth_required: false
+      rate_limit: "5/15min/ip"
+      
+    - method: GET
+      path: "/api/auth/me"
+      handler: "auth/me.js"
+      auth_required: true
+      rate_limit: "30/min"
+      
+    - method: POST
+      path: "/api/auth/google"
+      handler: "auth/google.js"
+      auth_required: false
+      rate_limit: "5/min/ip"
+
+config:
+  JWT_SECRET: "${env.JWT_SECRET}"
+  JWT_EXPIRY: "7d"
+  GOOGLE_CLIENT_ID: "${env.GOOGLE_CLIENT_ID}"
+  GOOGLE_CLIENT_SECRET: "${env.GOOGLE_CLIENT_SECRET}"
+
+dependencies:
+  requires: []
+  required_by:
+    - video-upload
+    - video-management
+    - ai-generation
+
+frontend_integration:                   # ← NEW: Links to UVA
+  provides_state:
+    - user: "{ id, email, name, token }"
+    - isAuthenticated: "boolean"
+  provides_actions:
+    - login: "(email, password) => Promise<void>"
+    - logout: "() => void"
+    - googleLogin: "() => Promise<void>"
+
+business:
+  revenue_impact: "critical"
+  user_facing: true
+  can_disable: false

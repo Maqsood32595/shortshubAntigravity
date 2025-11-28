@@ -1,0 +1,54 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Debug logs
+db_debug*.log
+debug*.log
+*_debug*.log
+server.log
+client_dev.log
+startup_error.log
+gcs_debug*.log
+
+# Build output
+build/
+dist/
+client/build/
+.feature-system/generated/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+uploads/
+data/
+
+# Google Cloud
+*-service-account.json
+shortshub-service-account.json
+
+# Test coverage
+coverage/
+
+# Cache
+.cache/
+.parcel-cache/

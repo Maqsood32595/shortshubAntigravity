@@ -1,0 +1,112 @@
+{
+    "id": "register",
+    "structure": {
+        "type": "div",
+        "props": {
+            "className": "min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 to-pink-100 dark:from-gray-900 dark:to-gray-800 px-4"
+        },
+        "children": [
+            {
+                "type": "Card",
+                "props": {
+                    "className": "w-full max-w-md p-8 shadow-2xl"
+                },
+                "children": [
+                    {
+                        "type": "div",
+                        "props": {
+                            "className": "text-center mb-8"
+                        },
+                        "children": [
+                            {
+                                "type": "h1",
+                                "props": {
+                                    "className": "text-3xl font-bold text-gray-900 dark:text-white mb-2",
+                                    "children": "Create Account"
+                                }
+                            },
+                            {
+                                "type": "p",
+                                "props": {
+                                    "className": "text-gray-600 dark:text-gray-400",
+                                    "children": "Join ShortsHub and start creating"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "form",
+                        "props": {
+                            "className": "space-y-4",
+                            "onSubmit": "handleRegister"
+                        },
+                        "children": [
+                            {
+                                "type": "Input",
+                                "props": {
+                                    "label": "Full Name",
+                                    "name": "name",
+                                    "type": "text",
+                                    "placeholder": "John Doe",
+                                    "required": true
+                                }
+                            },
+                            {
+                                "type": "Input",
+                                "props": {
+                                    "label": "Email",
+                                    "name": "email",
+                                    "type": "email",
+                                    "placeholder": "you@example.com",
+                                    "required": true
+                                }
+                            },
+                            {
+                                "type": "Input",
+                                "props": {
+                                    "label": "Password",
+                                    "name": "password",
+                                    "type": "password",
+                                    "placeholder": "••••••••",
+                                    "required": true
+                                }
+                            },
+                            {
+                                "type": "Button",
+                                "props": {
+                                    "variant": "primary",
+                                    "size": "lg",
+                                    "type": "submit",
+                                    "className": "w-full",
+                                    "children": "Create Account"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "props": {
+                            "className": "text-center text-sm text-gray-600 dark:text-gray-400 mt-6"
+                        },
+                        "children": [
+                            {
+                                "type": "span",
+                                "props": {
+                                    "children": "Already have an account? "
+                                }
+                            },
+                            {
+                                "type": "a",
+                                "props": {
+                                    "href": "/login",
+                                    "className": "text-blue-600 hover:text-blue-700 font-medium",
+                                    "children": "Sign In"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

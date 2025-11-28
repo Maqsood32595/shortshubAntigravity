@@ -1,0 +1,27 @@
+feature:
+  id: "video-discovery"
+  name: "Video Discovery"
+  description: "Features for discovering and managing video content (Trending, Subscriptions, Library)"
+
+layer: "backend"
+
+backend:
+  routes:
+    - method: GET
+      path: "/api/videos/trending"
+      handler: "video/trending.js"
+    - method: GET
+      path: "/api/videos/subscriptions"
+      handler: "video/subscriptions.js"
+    - method: GET
+      path: "/api/videos/history"
+      handler: "video/history.js"
+    - method: GET
+      path: "/api/videos/uploaded"
+      handler: "video/uploaded.js"
+    - method: GET
+      path: "/api/videos/ai-generated"
+      handler: "video/ai-generated.js"
+    - method: GET
+      path: "/api/videos/liked"
+      handler: "video/liked.js"

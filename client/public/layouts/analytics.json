@@ -1,0 +1,62 @@
+{
+    "id": "analytics",
+    "name": "Analytics",
+    "version": "1.0.0",
+    "structure": {
+        "type": "AppShell",
+        "props": {
+            "sidebar": true,
+            "header": true
+        },
+        "children": [
+            {
+                "id": "header",
+                "type": "Header",
+                "props": {
+                    "title": "Channel Analytics"
+                }
+            },
+            {
+                "id": "main",
+                "type": "Container",
+                "props": {
+                    "maxWidth": "7xl",
+                    "padding": "lg"
+                },
+                "children": [
+                    {
+                        "id": "overview-stats",
+                        "type": "StatsGrid",
+                        "props": {
+                            "dataSource": "analytics.overview",
+                            "columns": 4
+                        }
+                    },
+                    {
+                        "id": "charts-section",
+                        "type": "Container",
+                        "props": {
+                            "className": "mt-8"
+                        },
+                        "children": [
+                            {
+                                "id": "views-chart",
+                                "type": "Card",
+                                "props": {
+                                    "title": "Views Over Time",
+                                    "children": "Chart placeholder..."
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "dataSources": {
+        "analytics.overview": {
+            "endpoint": "/api/dashboard/stats",
+            "method": "GET"
+        }
+    }
+}

@@ -1,0 +1,77 @@
+{
+  "id": "dashboard",
+  "name": "Dashboard Layout",
+  "version": "1.0.0",
+  
+  "structure": {
+    "type": "AppShell",
+    "props": {
+      "sidebar": true,
+      "header": true
+    },
+    "children": [
+      {
+        "id": "header",
+        "type": "Header",
+        "props": {
+          "title": "Dashboard",
+          "showUserMenu": true
+        }
+      },
+      {
+        "id": "main",
+        "type": "Container",
+        "props": {
+          "maxWidth": "7xl",
+          "padding": "lg"
+        },
+        "children": [
+          {
+            "id": "stats",
+            "type": "StatsGrid",
+            "props": {
+              "dataSource": "dashboard.stats",
+              "columns": 4
+            }
+          },
+          {
+            "id": "recent-videos",
+            "type": "VideoGrid",
+            "props": {
+              "dataSource": "dashboard.recentVideos",
+              "title": "Recent Uploads",
+              "columns": 3,
+              "limit": 6
+            }
+          },
+          {
+            "id": "activity",
+            "type": "ActivityFeed",
+            "props": {
+              "dataSource": "dashboard.activity",
+              "maxItems": 10
+            }
+          }
+        ]
+      }
+    ]
+  },
+  
+  "dataSources": {
+    "dashboard.stats": {
+      "endpoint": "/api/dashboard/stats",
+      "method": "GET",
+      "cache": 300
+    },
+    "dashboard.recentVideos": {
+      "endpoint": "/api/videos/recent",
+      "method": "GET",
+      "cache": 60
+    },
+    "dashboard.activity": {
+      "endpoint": "/api/activity/feed",
+      "method": "GET",
+      "cache": 30
+    }
+  }
+}

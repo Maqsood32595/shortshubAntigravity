@@ -1,0 +1,44 @@
+feature:
+  id: "ai-generation"
+  name: "AI Video Generation"
+  description: "Generate AI videos using various models with prompt optimization"
+  version: "1.0.0"
+
+layer: "backend"
+
+backend:
+  routes:
+    - method: POST
+      path: "/api/ai/generate"
+      handler: "ai/generate.js"
+      auth_required: true
+      rate_limit: "10/hour/user"
+      
+    - method: GET
+      path: "/api/ai/status/:jobId"
+      handler: "ai/status.js"
+      auth_required: true
+      
+    - method: POST
+      path: "/api/ai/optimize-prompt"
+      handler: "ai/optimize-prompt.js"
+      auth_required: true
+      rate_limit: "20/hour/user"
+      
+    - method: GET
+      path: "/api/ai/jobs"
+      handler: "ai/jobs.js"
+      auth_required: true
+
+config:
+  VEO2_API_KEY: "${env.VEO2_API_KEY}"
+  RUNWAY_API_KEY: "${env.RUNWAY_API_KEY}"
+  KLING_API_KEY: "${env.KLING_API_KEY}"
+  LUMA_API_KEY: "${env.LUMA_API_KEY}"  
+  GEMINI_API_KEY: "${env.GEMINI_API_KEY}"
+
+dependencies:
+  requires:
+    - user-auth
+  required_by:
+    - video-management

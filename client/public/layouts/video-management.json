@@ -1,0 +1,49 @@
+{
+    "id": "video-management",
+    "name": "My Videos",
+    "version": "1.0.0",
+    "structure": {
+        "type": "AppShell",
+        "props": {
+            "sidebar": true,
+            "header": true
+        },
+        "children": [
+            {
+                "id": "header",
+                "type": "Header",
+                "props": {
+                    "title": "My Videos",
+                    "actionButton": "Upload New",
+                    "onAction": "() => window.location.href = '/upload'"
+                }
+            },
+            {
+                "id": "main",
+                "type": "Container",
+                "props": {
+                    "maxWidth": "7xl",
+                    "padding": "lg"
+                },
+                "children": [
+                    {
+                        "id": "videos-grid",
+                        "type": "VideoGrid",
+                        "props": {
+                            "dataSource": "user.videos",
+                            "title": "Your Library",
+                            "columns": 4,
+                            "showStatus": true
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "dataSources": {
+        "user.videos": {
+            "endpoint": "/api/upload/history",
+            "method": "GET"
+        }
+    }
+}

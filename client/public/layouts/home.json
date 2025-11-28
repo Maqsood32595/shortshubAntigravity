@@ -1,0 +1,656 @@
+{
+    "id": "home",
+    "structure": {
+        "type": "div",
+        "props": {
+            "className": "min-h-screen bg-white dark:bg-gray-900"
+        },
+        "children": [
+            {
+                "type": "section",
+                "props": {
+                    "className": "relative overflow-hidden bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 text-white py-24 px-4"
+                },
+                "children": [
+                    {
+                        "type": "div",
+                        "props": {
+                            "className": "absolute inset-0 bg-black opacity-10"
+                        }
+                    },
+                    {
+                        "type": "Container",
+                        "props": {
+                            "maxWidth": "xl",
+                            "className": "relative z-10"
+                        },
+                        "children": [
+                            {
+                                "type": "div",
+                                "props": {
+                                    "className": "text-center space-y-8"
+                                },
+                                "children": [
+                                    {
+                                        "type": "h1",
+                                        "props": {
+                                            "className": "text-5xl md:text-7xl font-bold tracking-tight mb-6",
+                                            "children": "Free AI Video Generator"
+                                        }
+                                    },
+                                    {
+                                        "type": "p",
+                                        "props": {
+                                            "className": "text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-8",
+                                            "children": "Transform your ideas into cinematic short videos in minutes. Upload, create with AI, and share with the world."
+                                        }
+                                    },
+                                    {
+                                        "type": "div",
+                                        "props": {
+                                            "className": "flex flex-col sm:flex-row gap-4 justify-center"
+                                        },
+                                        "children": [
+                                            {
+                                                "type": "Button",
+                                                "props": {
+                                                    "variant": "primary",
+                                                    "size": "lg",
+                                                    "className": "bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg font-semibold",
+                                                    "onClick": "() => window.location.href = '/upload'",
+                                                    "children": "Start Creating"
+                                                }
+                                            },
+                                            {
+                                                "type": "Button",
+                                                "props": {
+                                                    "variant": "outline",
+                                                    "size": "lg",
+                                                    "className": "bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg font-semibold",
+                                                    "onClick": "() => window.location.href = '/trending'",
+                                                    "children": "Explore Trending"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "section",
+                "props": {
+                    "className": "py-20 px-4 bg-gray-50 dark:bg-gray-800"
+                },
+                "children": [
+                    {
+                        "type": "Container",
+                        "props": {
+                            "maxWidth": "xl"
+                        },
+                        "children": [
+                            {
+                                "type": "h2",
+                                "props": {
+                                    "className": "text-4xl font-bold text-center mb-4 text-gray-900 dark:text-white",
+                                    "children": "All-in-One Video Platform"
+                                }
+                            },
+                            {
+                                "type": "p",
+                                "props": {
+                                    "className": "text-xl text-center text-gray-600 dark:text-gray-400 mb-16 max-w-2xl mx-auto",
+                                    "children": "Everything you need to create, manage, and share stunning short videos powered by AI"
+                                }
+                            },
+                            {
+                                "type": "div",
+                                "props": {
+                                    "className": "grid grid-cols-1 md:grid-cols-3 gap-8"
+                                },
+                                "children": [
+                                    {
+                                        "type": "Card",
+                                        "props": {
+                                            "className": "p-8 text-center hover:shadow-xl transition-shadow duration-300"
+                                        },
+                                        "children": [
+                                            {
+                                                "type": "div",
+                                                "props": {
+                                                    "className": "w-16 h-16 mx-auto mb-6 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "type": "span",
+                                                        "props": {
+                                                            "className": "text-3xl",
+                                                            "children": "📤"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type": "h3",
+                                                "props": {
+                                                    "className": "text-2xl font-bold mb-4 text-gray-900 dark:text-white",
+                                                    "children": "Upload Videos"
+                                                }
+                                            },
+                                            {
+                                                "type": "p",
+                                                "props": {
+                                                    "className": "text-gray-600 dark:text-gray-400 mb-6",
+                                                    "children": "Easily upload your short videos with our drag-and-drop interface. Supports all major formats."
+                                                }
+                                            },
+                                            {
+                                                "type": "Button",
+                                                "props": {
+                                                    "variant": "outline",
+                                                    "onClick": "() => window.location.href = '/upload'",
+                                                    "children": "Try Upload"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "Card",
+                                        "props": {
+                                            "className": "p-8 text-center hover:shadow-xl transition-shadow duration-300 border-2 border-blue-500"
+                                        },
+                                        "children": [
+                                            {
+                                                "type": "div",
+                                                "props": {
+                                                    "className": "w-16 h-16 mx-auto mb-6 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "type": "span",
+                                                        "props": {
+                                                            "className": "text-3xl",
+                                                            "children": "🎨"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type": "h3",
+                                                "props": {
+                                                    "className": "text-2xl font-bold mb-4 text-gray-900 dark:text-white",
+                                                    "children": "AI Video Generator"
+                                                }
+                                            },
+                                            {
+                                                "type": "p",
+                                                "props": {
+                                                    "className": "text-gray-600 dark:text-gray-400 mb-6",
+                                                    "children": "Create stunning videos from text prompts using advanced AI models. Turn ideas into reality."
+                                                }
+                                            },
+                                            {
+                                                "type": "Button",
+                                                "props": {
+                                                    "variant": "primary",
+                                                    "onClick": "() => window.location.href = '/ai-generate'",
+                                                    "children": "Try AI Generator"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "Card",
+                                        "props": {
+                                            "className": "p-8 text-center hover:shadow-xl transition-shadow duration-300"
+                                        },
+                                        "children": [
+                                            {
+                                                "type": "div",
+                                                "props": {
+                                                    "className": "w-16 h-16 mx-auto mb-6 bg-pink-100 dark:bg-pink-900 rounded-full flex items-center justify-center"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "type": "span",
+                                                        "props": {
+                                                            "className": "text-3xl",
+                                                            "children": "📊"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type": "h3",
+                                                "props": {
+                                                    "className": "text-2xl font-bold mb-4 text-gray-900 dark:text-white",
+                                                    "children": "Analytics Dashboard"
+                                                }
+                                            },
+                                            {
+                                                "type": "p",
+                                                "props": {
+                                                    "className": "text-gray-600 dark:text-gray-400 mb-6",
+                                                    "children": "Track your video performance with detailed analytics and insights to grow your audience."
+                                                }
+                                            },
+                                            {
+                                                "type": "Button",
+                                                "props": {
+                                                    "variant": "outline",
+                                                    "onClick": "() => window.location.href = '/analytics'",
+                                                    "children": "View Analytics"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "section",
+                "props": {
+                    "className": "py-20 px-4 bg-white dark:bg-gray-900"
+                },
+                "children": [
+                    {
+                        "type": "Container",
+                        "props": {
+                            "maxWidth": "xl"
+                        },
+                        "children": [
+                            {
+                                "type": "h2",
+                                "props": {
+                                    "className": "text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white",
+                                    "children": "How It Works"
+                                }
+                            },
+                            {
+                                "type": "div",
+                                "props": {
+                                    "className": "grid grid-cols-1 md:grid-cols-3 gap-12"
+                                },
+                                "children": [
+                                    {
+                                        "type": "div",
+                                        "props": {
+                                            "className": "text-center"
+                                        },
+                                        "children": [
+                                            {
+                                                "type": "div",
+                                                "props": {
+                                                    "className": "w-20 h-20 mx-auto mb-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-3xl font-bold",
+                                                    "children": "1"
+                                                }
+                                            },
+                                            {
+                                                "type": "h3",
+                                                "props": {
+                                                    "className": "text-2xl font-bold mb-4 text-gray-900 dark:text-white",
+                                                    "children": "Create Account"
+                                                }
+                                            },
+                                            {
+                                                "type": "p",
+                                                "props": {
+                                                    "className": "text-gray-600 dark:text-gray-400",
+                                                    "children": "Sign up in seconds with your email or Google account. It's completely free to start."
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "div",
+                                        "props": {
+                                            "className": "text-center"
+                                        },
+                                        "children": [
+                                            {
+                                                "type": "div",
+                                                "props": {
+                                                    "className": "w-20 h-20 mx-auto mb-6 bg-purple-500 text-white rounded-full flex items-center justify-center text-3xl font-bold",
+                                                    "children": "2"
+                                                }
+                                            },
+                                            {
+                                                "type": "h3",
+                                                "props": {
+                                                    "className": "text-2xl font-bold mb-4 text-gray-900 dark:text-white",
+                                                    "children": "Upload or Generate"
+                                                }
+                                            },
+                                            {
+                                                "type": "p",
+                                                "props": {
+                                                    "className": "text-gray-600 dark:text-gray-400",
+                                                    "children": "Upload your own videos or use our AI generator to create stunning content from text."
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "div",
+                                        "props": {
+                                            "className": "text-center"
+                                        },
+                                        "children": [
+                                            {
+                                                "type": "div",
+                                                "props": {
+                                                    "className": "w-20 h-20 mx-auto mb-6 bg-pink-500 text-white rounded-full flex items-center justify-center text-3xl font-bold",
+                                                    "children": "3"
+                                                }
+                                            },
+                                            {
+                                                "type": "h3",
+                                                "props": {
+                                                    "className": "text-2xl font-bold mb-4 text-gray-900 dark:text-white",
+                                                    "children": "Share & Grow"
+                                                }
+                                            },
+                                            {
+                                                "type": "p",
+                                                "props": {
+                                                    "className": "text-gray-600 dark:text-gray-400",
+                                                    "children": "Share your videos with the community and watch your audience grow with powerful analytics."
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "section",
+                "props": {
+                    "className": "py-20 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white"
+                },
+                "children": [
+                    {
+                        "type": "Container",
+                        "props": {
+                            "maxWidth": "lg"
+                        },
+                        "children": [
+                            {
+                                "type": "div",
+                                "props": {
+                                    "className": "text-center space-y-8"
+                                },
+                                "children": [
+                                    {
+                                        "type": "h2",
+                                        "props": {
+                                            "className": "text-4xl md:text-5xl font-bold",
+                                            "children": "Start Creating Videos Today"
+                                        }
+                                    },
+                                    {
+                                        "type": "p",
+                                        "props": {
+                                            "className": "text-xl text-blue-100 max-w-2xl mx-auto",
+                                            "children": "Join thousands of creators using ShortsHub to bring their ideas to life"
+                                        }
+                                    },
+                                    {
+                                        "type": "Button",
+                                        "props": {
+                                            "variant": "primary",
+                                            "size": "lg",
+                                            "className": "bg-white text-blue-600 hover:bg-blue-50 px-10 py-4 text-xl font-semibold",
+                                            "onClick": "() => window.location.href = '/register'",
+                                            "children": "Get Started Free"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "footer",
+                "props": {
+                    "className": "bg-gray-900 text-gray-300 py-12 px-4"
+                },
+                "children": [
+                    {
+                        "type": "Container",
+                        "props": {
+                            "maxWidth": "xl"
+                        },
+                        "children": [
+                            {
+                                "type": "div",
+                                "props": {
+                                    "className": "grid grid-cols-1 md:grid-cols-4 gap-8 mb-8"
+                                },
+                                "children": [
+                                    {
+                                        "type": "div",
+                                        "props": {},
+                                        "children": [
+                                            {
+                                                "type": "h3",
+                                                "props": {
+                                                    "className": "text-white text-xl font-bold mb-4",
+                                                    "children": "ShortsHub"
+                                                }
+                                            },
+                                            {
+                                                "type": "p",
+                                                "props": {
+                                                    "className": "text-gray-400 text-sm",
+                                                    "children": "Transform your ideas into cinematic masterpieces in minutes."
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "div",
+                                        "props": {},
+                                        "children": [
+                                            {
+                                                "type": "h4",
+                                                "props": {
+                                                    "className": "text-white font-semibold mb-4",
+                                                    "children": "Video Tools"
+                                                }
+                                            },
+                                            {
+                                                "type": "ul",
+                                                "props": {
+                                                    "className": "space-y-2 text-sm"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "type": "li",
+                                                        "props": {},
+                                                        "children": [
+                                                            {
+                                                                "type": "a",
+                                                                "props": {
+                                                                    "href": "/upload",
+                                                                    "className": "hover:text-white",
+                                                                    "children": "Upload Video"
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "li",
+                                                        "props": {},
+                                                        "children": [
+                                                            {
+                                                                "type": "a",
+                                                                "props": {
+                                                                    "href": "/ai-generate",
+                                                                    "className": "hover:text-white",
+                                                                    "children": "AI Generator"
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "li",
+                                                        "props": {},
+                                                        "children": [
+                                                            {
+                                                                "type": "a",
+                                                                "props": {
+                                                                    "href": "/videos",
+                                                                    "className": "hover:text-white",
+                                                                    "children": "My Videos"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "div",
+                                        "props": {},
+                                        "children": [
+                                            {
+                                                "type": "h4",
+                                                "props": {
+                                                    "className": "text-white font-semibold mb-4",
+                                                    "children": "Explore"
+                                                }
+                                            },
+                                            {
+                                                "type": "ul",
+                                                "props": {
+                                                    "className": "space-y-2 text-sm"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "type": "li",
+                                                        "props": {},
+                                                        "children": [
+                                                            {
+                                                                "type": "a",
+                                                                "props": {
+                                                                    "href": "/trending",
+                                                                    "className": "hover:text-white",
+                                                                    "children": "Trending"
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "li",
+                                                        "props": {},
+                                                        "children": [
+                                                            {
+                                                                "type": "a",
+                                                                "props": {
+                                                                    "href": "/library",
+                                                                    "className": "hover:text-white",
+                                                                    "children": "Library"
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "li",
+                                                        "props": {},
+                                                        "children": [
+                                                            {
+                                                                "type": "a",
+                                                                "props": {
+                                                                    "href": "/analytics",
+                                                                    "className": "hover:text-white",
+                                                                    "children": "Analytics"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "div",
+                                        "props": {},
+                                        "children": [
+                                            {
+                                                "type": "h4",
+                                                "props": {
+                                                    "className": "text-white font-semibold mb-4",
+                                                    "children": "Legal"
+                                                }
+                                            },
+                                            {
+                                                "type": "ul",
+                                                "props": {
+                                                    "className": "space-y-2 text-sm"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "type": "li",
+                                                        "props": {},
+                                                        "children": [
+                                                            {
+                                                                "type": "a",
+                                                                "props": {
+                                                                    "href": "#",
+                                                                    "className": "hover:text-white",
+                                                                    "children": "Privacy Policy"
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "li",
+                                                        "props": {},
+                                                        "children": [
+                                                            {
+                                                                "type": "a",
+                                                                "props": {
+                                                                    "href": "#",
+                                                                    "className": "hover:text-white",
+                                                                    "children": "Terms of Service"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "div",
+                                "props": {
+                                    "className": "border-t border-gray-800 pt-8 text-center text-sm text-gray-500"
+                                },
+                                "children": [
+                                    {
+                                        "type": "p",
+                                        "props": {
+                                            "children": "© 2025 ShortsHub. All rights reserved."
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

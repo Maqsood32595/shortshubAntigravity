@@ -1,0 +1,21 @@
+feature:
+  id: "dashboard"
+  name: "User Dashboard"
+  description: "Dashboard for user statistics and activity"
+
+layer: "backend"
+
+backend:
+  routes:
+    - method: GET
+      path: "/api/dashboard/stats"
+      handler: "dashboard/stats.js"
+    - method: GET
+      path: "/api/activity/feed"
+      handler: "activity/feed.js"
+    - method: GET
+      path: "/api/videos/recent"
+      handler: "video/recent.js"
+    - method: GET
+      path: "/api/upload/history"
+      handler: "upload/history.js"

@@ -1,0 +1,40 @@
+{
+    "id": "platforms-page",
+    "title": "Platforms",
+    "structure": {
+        "type": "Container",
+        "props": {
+            "className": "flex h-screen bg-gray-900 text-white"
+        },
+        "children": [
+            {
+                "type": "Sidebar",
+                "props": {}
+            },
+            {
+                "type": "Container",
+                "props": {
+                    "className": "flex-1 flex flex-col overflow-hidden ml-64"
+                },
+                "children": [
+                    {
+                        "type": "Header",
+                        "props": {}
+                    },
+                    {
+                        "type": "Container",
+                        "props": {
+                            "className": "flex-1 overflow-hidden p-6"
+                        },
+                        "children": [
+                            {
+                                "type": "PlatformsPage",
+                                "props": {}
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

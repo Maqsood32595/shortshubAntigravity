@@ -1,0 +1,64 @@
+feature:
+  id: "platforms"
+  name: "Platform Management"
+  description: "Manage social media platform connections, scheduling, and analytics"
+  version: "1.0.0"
+
+layer: "backend"
+
+backend:
+  routes:
+    - method: GET
+      path: "/api/platforms/list"
+      handler: "platforms/list.js"
+      auth_required: true
+      
+    - method: POST
+      path: "/api/platforms/connect/:platform"
+      handler: "platforms/connect.js"
+      auth_required: true
+      
+    - method: GET
+      path: "/api/platforms/callback/:platform"
+      handler: "platforms/callback.js"
+      
+    - method: DELETE
+      path: "/api/platforms/disconnect/:platform"
+      handler: "platforms/disconnect.js"
+      auth_required: true
+      
+    - method: POST
+      path: "/api/platforms/post"
+      handler: "platforms/post.js"
+      auth_required: true
+      
+    -method: POST
+      path: "/api/platforms/schedule"
+      handler: "platforms/schedule.js"
+      auth_required: true
+      
+    - method: GET
+      path: "/api/platforms/scheduled-posts"
+      handler: "platforms/scheduled-posts.js"
+      auth_required: true
+      
+    - method: GET
+      path: "/api/platforms/analytics"
+      handler: "platforms/analytics.js"
+      auth_required: true
+
+config:
+  GOOGLE_CLIENT_ID: "${env.GOOGLE_CLIENT_ID}"
+  GOOGLE_CLIENT_SECRET: "${env.GOOGLE_CLIENT_SECRET}"
+  TIKTOK_CLIENT_KEY: "${env.TIKTOK_CLIENT_KEY}"
+  TIKTOK_CLIENT_SECRET: "${env.TIKTOK_CLIENT_SECRET}"
+  META_APP_ID: "${env.META_APP_ID}"
+  META_APP_SECRET: "${env.META_APP_SECRET}"
+  TWITTER_API_KEY: "${env.TWITTER_API_KEY}"
+  TWITTER_API_SECRET: "${env.TWITTER_API_SECRET}"
+
+dependencies:
+  requires:
+    - user-auth
+  required_by:
+    - video-management

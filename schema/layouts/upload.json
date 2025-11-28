@@ -1,0 +1,89 @@
+{
+    "id": "upload",
+    "name": "Video Upload Layout",
+    "version": "1.0.0",
+    "structure": {
+        "type": "AppShell",
+        "props": {
+            "sidebar": true,
+            "header": true
+        },
+        "children": [
+            {
+                "id": "header",
+                "type": "Header",
+                "props": {
+                    "title": "Upload Video",
+                    "backButton": true,
+                    "backUrl": "/dashboard"
+                }
+            },
+            {
+                "id": "main",
+                "type": "Container",
+                "props": {
+                    "maxWidth": "4xl",
+                    "padding": "xl"
+                },
+                "children": [
+                    {
+                        "id": "upload-zone",
+                        "type": "VideoUploadZone",
+                        "props": {
+                            "maxSize": "500MB",
+                            "acceptedFormats": [
+                                "mp4",
+                                "mov",
+                                "avi",
+                                "webm"
+                            ],
+                            "onUpload": "handleVideoUpload",
+                            "enableChunked": true
+                        }
+                    },
+                    {
+                        "id": "upload-progress",
+                        "type": "UploadProgressBar",
+                        "props": {
+                            "dataSource": "upload.progress",
+                            "showDetails": true
+                        },
+                        "conditional": "upload.inProgress"
+                    },
+                    {
+                        "id": "recent-uploads",
+                        "type": "UploadHistory",
+                        "props": {
+                            "dataSource": "upload.history",
+                            "limit": 5
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "dataSources": {
+        "upload.progress": {
+            "stateKey": "uploadProgress"
+        },
+        "upload.history": {
+            "endpoint": "/api/upload/history",
+            "method": "GET"
+        }
+    },
+    "actions": {
+        "handleVideoUpload": {
+            "type": "custom",
+            "function": "uploadVideo",
+            "onSuccess": {
+                "type": "navigate",
+                "to": "/videos"
+            },
+            "onError": {
+                "type": "notification",
+                "message": "Upload failed. Please try again.",
+                "severity": "error"
+            }
+        }
+    }
+}

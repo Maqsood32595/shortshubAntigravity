@@ -1,0 +1,67 @@
+feature:
+  id: "video-upload"
+  name: "Video Upload"
+  version: "3.2.0"
+  status: "active"
+  layer: "hybrid"                       # ← Backend + Frontend
+  
+  changelog:
+    - version: "3.2.0"
+      date: "2024-11-20"
+      ai: "Cursor-AI"
+      auth_required: true
+      rate_limit: "10/hour/user"
+      
+    - method: GET
+      path: "/api/upload/status/:uploadId"
+      handler: "video/upload-status.js"
+      auth_required: true
+
+    - method: GET
+      path: "/api/videos/trending"
+      handler: "video/feed.js"
+      
+    - method: GET
+      path: "/api/videos/featured"
+      handler: "video/feed.js"
+
+    - method: GET
+      path: "/api/videos/subscriptions"
+      handler: "video/feed.js"
+      auth_required: true
+
+    - method: GET
+      path: "/api/user/history"
+      handler: "video/feed.js"
+      auth_required: true
+
+config:
+  MAX_FILE_SIZE: "500MB"
+  CHUNK_SIZE: "5MB"
+  ALLOWED_FORMATS: "mp4,mov,avi,webm"
+  GCS_BUCKET: "${env.GCS_BUCKET}"
+
+dependencies:
+  requires:
+    - user-auth
+  required_by:
+    - video-management
+    - ai-generation
+    - social-publishing
+
+frontend_integration:                   # ← Links to UVA
+  provides_state:
+    - uploads: "Upload[]"
+    - uploadProgress: "{ [id: string]: number }"
+  provides_actions:
+    - uploadVideo: "(file: File) => Promise<string>"
+    - uploadChunked: "(file: File) => Promise<string>"
+  uva_components:                       # ← UVA components for this feature
+    - "VideoUploadZone"
+    - "UploadProgressBar"
+    - "VideoPreview"
+
+business:
+  revenue_impact: "high"
+  user_facing: true
+  can_disable: false

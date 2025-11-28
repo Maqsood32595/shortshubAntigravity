@@ -1,0 +1,94 @@
+{
+    "id": "library-page",
+    "title": "Library",
+    "structure": {
+        "type": "Container",
+        "props": {
+            "className": "flex h-screen bg-gray-900 text-white"
+        },
+        "children": [
+            {
+                "type": "Sidebar",
+                "props": {}
+            },
+            {
+                "type": "Container",
+                "props": {
+                    "className": "flex-1 flex flex-col overflow-hidden ml-64"
+                },
+                "children": [
+                    {
+                        "type": "Header",
+                        "props": {}
+                    },
+                    {
+                        "type": "Container",
+                        "props": {
+                            "className": "flex-1 overflow-y-auto p-6"
+                        },
+                        "children": [
+                            {
+                                "type": "Text",
+                                "props": {
+                                    "content": "Library",
+                                    "className": "text-2xl font-bold mb-6"
+                                }
+                            },
+                            {
+                                "type": "Text",
+                                "props": {
+                                    "content": "My Uploads",
+                                    "className": "text-xl font-semibold mb-4"
+                                }
+                            },
+                            {
+                                "type": "VideoGrid",
+                                "props": {
+                                    "dataSource": "/api/videos/uploaded"
+                                }
+                            },
+                            {
+                                "type": "Container",
+                                "props": {
+                                    "className": "h-8"
+                                }
+                            },
+                            {
+                                "type": "Text",
+                                "props": {
+                                    "content": "History",
+                                    "className": "text-xl font-semibold mb-4"
+                                }
+                            },
+                            {
+                                "type": "VideoGrid",
+                                "props": {
+                                    "dataSource": "/api/videos/history"
+                                }
+                            },
+                            {
+                                "type": "Container",
+                                "props": {
+                                    "className": "h-8"
+                                }
+                            },
+                            {
+                                "type": "Text",
+                                "props": {
+                                    "content": "Liked Videos",
+                                    "className": "text-xl font-semibold mb-4"
+                                }
+                            },
+                            {
+                                "type": "VideoGrid",
+                                "props": {
+                                    "dataSource": "/api/videos/liked"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
